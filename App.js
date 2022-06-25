@@ -15,6 +15,7 @@ import Interface from './Components/Interface'
 import Streaming from './Components/Streaming'
 import Cinema from './Components/Cinema'
 import Yolo from './Components/Yolo';
+import Login from './Components/Login';
 import Test from './Components/Test'
 import {navigationRef} from './Components/RootNavigation';
 
@@ -43,10 +44,11 @@ export default function App() {
     
     <Provider store={store}>
     <NavigationContainer ref={navigationRef}>
-    <Stack.Navigator initialRouteName='Yolo'>
+    <Stack.Navigator initialRouteName='Login'>
     <Stack.Screen name="Detail" component={Home}/>
     <Stack.Screen name="Interface" component={Interface}/>
       <Stack.Screen name="Search" component={Search}/>
+      <Stack.Screen name="Login" component={Login}/>
       <Stack.Screen name="favoris" component={Favoris}/>
       <Stack.Screen name="Streaming" component={Streaming}/>
       <Stack.Screen name="Cinema" component={Cinema}/>

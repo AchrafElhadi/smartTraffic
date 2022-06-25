@@ -5,9 +5,9 @@ class Yolo extends React.Component{
     constructor(props) {
         super(props)
         this.state={
-            // dte:{detections:{labels:[{},{},{},{},{},{}]}},
-            dte:"",
-            duree:15,
+             dte:{detections:{labels:[{},{},{},{},{},{},{},{},{},{}]}},
+            //dte:"",
+            duree:10,
             road2:10,
             roadlight1:false,
             vois:true,
@@ -16,10 +16,10 @@ class Yolo extends React.Component{
     }
     async componentDidMount()
     {
-        const resp=await fetch("http://localhost:5000/")
-        const res=await resp.json();
+        // const resp=await fetch("http://localhost:5000/")
+        // const res=await resp.json();
 
-        this.setState({dte:res})
+        // this.setState({dte:res})
          if(this.state.dte.detections.labels.length>10)
              this.setState({roadlight1:true})
       
@@ -40,10 +40,10 @@ class Yolo extends React.Component{
                 if( this.state.vois)
                     this.setState({duree:5,roadlight1:!this.state.roadlight1})
                 else
-                    this.setState({duree:15,roadlight1:!this.state.roadlight1})
+                    this.setState({duree:10,roadlight1:!this.state.roadlight1})
             }
             else
-            this.setState({duree:15,roadlight1:!this.state.roadlight1})
+            this.setState({duree:10,roadlight1:!this.state.roadlight1})
             
                         this.setState({vois:!this.state.vois})
 
